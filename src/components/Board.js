@@ -1,5 +1,6 @@
 import Square from "./Square";
 import React, { useState } from "react";
+import Swal from 'sweetalert2';
 
 function Board({xIsNext, squares, onPlay}) {
 
@@ -21,6 +22,7 @@ function Board({xIsNext, squares, onPlay}) {
   let status;
   if(winner){
     status = "Ganador: "+winner;
+    Swal.fire("Ganador: "+winner);
   }else{
     status = "Siguiente jugador: "+(xIsNext ? "X" : "O");
   }
